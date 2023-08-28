@@ -1,0 +1,102 @@
+{
+  "child": {
+    "creativity": ["artisticProdigy"],
+    "mental": ["whizKid"],
+    "motor": ["rambunctiousScamp"],
+    "multiSkill": ["playtimeCaptain", "creativeGenius", "slumberPartyAnimal", "mindAndBody"],
+    "social": ["socialButterfly"]
+  },
+  "teen": {
+    "teen": ["liveFast", "admiredIcon", "dramaLlama", "goalOriented"]
+  },
+  "adult": {
+    "animal": [
+      "friendOfTheAnimal"
+    ],
+    "athletic": [
+      "extremeSportsEnthusiast",
+      "bodybuilder",
+      "championshipRider"
+    ],
+    "creativity": [
+      "mastorActor",
+      "painterExtraordinaire",
+      "bestsellingAuthor",
+      "musicalGenius",
+      "lordOfTheKnits",
+      "masterMaker"
+    ],
+    "deviance": [
+      "publicEnemy",
+      "chiefOfMischief",
+      "villainousValentine"
+    ],
+    "family": [
+      "superParent",
+      "successfulLineage",
+      "bigHappyFamily",
+      "vampireFamily"
+    ],
+    "food": [
+      "masterChef",
+      "masterMixologist",
+      "expertWineMaker"
+    ],
+    "fortune": [
+      "fabulouslyWealthy",
+      "mansionBaron"
+    ],
+    "knowledge": [
+      "masterVampire",
+      "renaissanceSim",
+      "archaeologyScholar",
+      "computerWhiz",
+      "nerdBrain",
+      "spellcraftAndSorcery",
+      "academic"
+    ],
+    "location": [
+      "strangervilleMystery",
+      "mtKomorebiSightseer",
+      "fabulouslyFilthy",
+      "perfectlyPrisitine",
+      "cityNative",
+      "beachLife"
+    ],
+    "love": [
+      "serialRomantic",
+      "soulmate"
+    ],
+    "nature": [
+      "countryCaretaker",
+      "outdoorEnthusiast",
+      "purveyorOfPotions",
+      "freelanceBotanist",
+      "anglingAce",
+      "theCurator",
+      "jungleExplorer",
+      "ecoInnovator"
+    ],
+    "popularity": [
+      "neighborhoodConfidante",
+      "worldFamousCelebrity",
+      "leaderOfThePack",
+      "jokeStar",
+      "friendOfTheWorld",
+      "partyAnimal",
+      "goodVampire"
+    ],
+    "starWars": [
+      "hopeVsOrder",
+      "galacticPrivateer"
+    ],
+    "wellness": [
+      "innerPeace",
+      "zenGuru",
+      "selfCareSpecialist"
+    ],
+    "werewolf": [
+      "werewolfInitiate"
+    ]
+  }
+}

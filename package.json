@@ -1,0 +1,18 @@
+{
+  "name": "sims4-sim-generator",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.0.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "change-case": "^4.1.2",
+    "inquirer": "^8.1.5",
+    "remeda": "^1.25.2"
+  }
+}
