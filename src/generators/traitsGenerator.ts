@@ -10,15 +10,31 @@ type TraitsAgeGroup = 'Infant' | 'Toddler' | 'Child' | 'Teen' | 'Young Adult and
 const traitsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/traits.json'), 'utf-8'));
 
 // Function to generate random traits
-export default async function generateRandomTraits(): Promise<void> {
-  const { ageGroup } = await inquirer.prompt([
-    {
-      type: 'list',
-      name: 'ageGroup',
-      message: 'Pick an age group:',
-      choices: ['Infant', 'Toddler', 'Child', 'Teen', 'Young Adult and Older'],
-    },
-  ]);
+export default async function generateRandomTraits(age?: string): Promise<Array<string> | void> {
+  let ageGroup: TraitsAgeGroup;
+
+  if (!age) {
+    const response = await inquirer.prompt([
+      {
+        type: 'list',
+        name: 'ageGroup',
+        message: 'Pick an age group:',
+        choices: ['Infant', 'Toddler', 'Child', 'Teen', 'Young Adult and Older'],
+      },
+    ]);
+    ageGroup = response.ageGroup;
+  } else {
+    switch (age) {
+      case 'Young Adult':
+      case 'Adult':
+      case 'Elder':
+        ageGroup = 'Young Adult and Older';
+        break;
+      default:
+        ageGroup = age as TraitsAgeGroup;
+    }
+  }
+
   let traitsToChooseFrom: string[] = [];
   let numberOfTraits: number = 0;
 
@@ -54,4 +70,5 @@ export default async function generateRandomTraits(): Promise<void> {
 
   // Display the selected traits
   console.log(`Generated Traits for ${ageGroup}: ${selectedTraits.join(', ')}`);
+  return selectedTraits
 }

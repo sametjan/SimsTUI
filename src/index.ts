@@ -5,6 +5,7 @@ import generateRandomName from './generators/nameGenerator';
 import generateRandomAspiration from './generators/aspirationGenerator';
 import generateRandomTraits from './generators/traitsGenerator';
 import generateRandomPreferences from './generators/preferencesGenerator';
+import wholeSimGenerator from './generators/wholeSimGenerator'
 
 // Define the type for menu choices
 type MenuChoices =
@@ -59,7 +60,9 @@ async function mainMenu(): Promise<void> {
     case 'Generate Preferences':
       await generateRandomPreferences();
       break;
-    // ... other cases will go here
+    case 'Create Whole Sim':
+      await wholeSimGenerator();
+      break;
     case 'Exit':
       console.log('Exiting. Goodbye!');
       process.exit(0);

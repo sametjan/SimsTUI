@@ -14,9 +14,10 @@ type ToiletUse = 'Yes' | 'No';
 type RomanticAttraction = 'Men' | 'Women';
 type RomanticExploration = 'Yes' | 'No';
 type WooHooInterest = 'Men' | 'Women';
+type GenderAndOrientation = Record<string, any>;
 
 // Function to generate random gender and sexual orientation
-async function generateRandomGenderAndOrientation(): Promise<void> {
+async function generateRandomGenderAndOrientation(): Promise<GenderAndOrientation> {
   // Randomly generate gender
   const gender: Gender = randomChoice(['Male', 'Female', 'Custom']);
   console.log(`Gender: ${gender}`);
@@ -50,6 +51,17 @@ async function generateRandomGenderAndOrientation(): Promise<void> {
   console.log(`  Romantic Attraction: ${romanticAttraction.join(', ')}`);
   console.log(`  Romantic Exploration: ${romanticExploration}`);
   console.log(`  WooHoo Interest: ${wooHooInterest.join(', ')}`);
+
+  // Return gender and orientation details
+  return {
+    gender: gender,
+    customDetails: customDetails || null,
+    orientation: {
+      romanticAttraction: romanticAttraction.join(', '),
+      romanticExploration: romanticExploration,
+      wooHooInterest: wooHooInterest.join(', '),
+    }
+  };
 }
 
 // Export the function to be used in the main menu

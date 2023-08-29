@@ -12,19 +12,41 @@ function randomChoice<T>(options: T[]): T {
 }
 
 // Function to generate a random aspiration
-export default async function generateRandomAspiration(): Promise<void> {
+export default async function generateRandomAspiration(age?: string): Promise<{mainCategory:string, subCategory: string}> {
   // Read the aspirations data from the JSON file
   const aspirationsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/aspirations.json'), 'utf-8'));
+  let ageGroup: AspirationAgeGroup;
 
-  // Ask user for age group
-  const { ageGroup } = await inquirer.prompt([
-    {
-      type: 'list',
-      name: 'ageGroup',
-      message: 'Select the age group for the aspiration:',
-      choices: ['Child', 'Teen', 'Young Adult and Older'],
-    },
-  ]);
+  if (!age) {
+    // Ask user for age group
+    const response = await inquirer.prompt([
+      {
+        type: 'list',
+        name: 'ageGroup',
+        message: 'Select the age group for the aspiration:',
+        choices: ['Child', 'Teen', 'Young Adult and Older'],
+      },
+    ]);
+    ageGroup = response.ageGroup;
+  } else {
+    switch (age) {
+      case 'Infant':
+      case 'Toddler':
+        ageGroup = 'Child';
+        break;
+      case 'Child':
+      case 'Teen':
+        ageGroup = 'Teen';
+        break;
+      case 'Young Adult':
+      case 'Adult':
+      case 'Elder':
+        ageGroup = 'Young Adult and Older';
+        break;
+      default:
+        throw new Error('Invalid age group');
+    }
+  }
 
   let ageGroupAspirations: any;
 
@@ -56,4 +78,5 @@ export default async function generateRandomAspiration(): Promise<void> {
 
   // Output the generated aspiration
   console.log(`Aspiration: ${formattedMainCategory} > ${formattedSubCategory}`);
+  return { mainCategory: formattedMainCategory, subCategory: formattedSubCategory };
 }

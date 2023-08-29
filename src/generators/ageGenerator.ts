@@ -8,7 +8,7 @@ function randomChoice<T>(options: T[]): T {
 }
 
 // Function to generate random age
-export default function generateRandomAge(): void {
+export default function generateRandomAge(): Age {
   // List of available age options
   const ageOptions: Age[] = ['Infant', 'Toddler', 'Child', 'Teen', 'Young Adult', 'Adult', 'Elder'];
 
@@ -17,4 +17,5 @@ export default function generateRandomAge(): void {
 
   // Output the selected age
   console.log(`Age: ${selectedAge}`);
+  return selectedAge;
 }

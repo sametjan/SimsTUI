@@ -214,10 +214,6 @@ const navigatePreferences = async (preferences: Preferences, userPreferences: Pr
         userPreferences[category].dislikes.push(preference);
       }
     }
-    // const proceed = await generateMenu('Would you like to continue?', ['Yes', 'No']);
-    // if (proceed === 'No') {
-    //   return 'Exit';
-    // }
   }
   return 'Exit';  // Return 'Exit' to indicate going back to the main menu (or you could omit this if you don't need it)
 };
@@ -257,27 +253,55 @@ const mergeUserAndGeneratedPreferences = (userPreferences: Preferences, generate
 // Output the final preferences in the specified format.
 
 // Integrate these steps into the main function
-const main = async () => {
-  while (true) {
-    const userSelectedAgeGroup = await selectAgeGroup();
-    const selectedPreferences = getSelectedPreferences(userSelectedAgeGroup, preferencesData);
-
-    // Step 6: Randomly assign preferences
-    const randomPreferences = assignRandomPreferences(selectedPreferences);
-
-    // Step 7: Enforce constraints
-    const constrainedPreferences = enforceConstraints(randomPreferences);
-
-    // Initialize user preferences
-    const userPreferences: Preferences = {};
-
-    // Step 8-9: Navigate through preferences and update user preferences
-    const nextAction = await navigatePreferences(constrainedPreferences, userPreferences, selectedPreferences);
-    if (nextAction === 'Exit') {
-      const finalPreferences = mergeUserAndGeneratedPreferences(userPreferences, constrainedPreferences);
-      console.log(convertToTable(finalPreferences));  // Display the user preferences
-      break;  // Exit to the main menu
+const main = async (age?: string) => {
+  let ageGroup: string | null = null;
+  if (age) {
+    switch (age) {
+      case 'Child':
+        ageGroup = 'Child';
+        break;
+      case 'Teen':
+        ageGroup = 'Teen';
+        break;
+      case 'Young Adult':
+      case 'Adult':
+      case 'Elder':
+        ageGroup = 'Young Adult and Older';
+        break;
+      default:
+        ageGroup = null;
     }
+  }
+
+  const userSelectedAgeGroup = ageGroup || await selectAgeGroup();
+  const selectedPreferences = getSelectedPreferences(userSelectedAgeGroup, preferencesData);
+
+  // Step 6: Randomly assign preferences
+  const randomPreferences = assignRandomPreferences(selectedPreferences);
+
+  // Step 7: Enforce constraints
+  const constrainedPreferences = enforceConstraints(randomPreferences);
+
+  // Initialize user preferences
+  const userPreferences: Preferences = {};
+
+  if (!age) {  // Only navigate user preferences if `age` is not supplied
+    // Step 8-9: Navigate through preferences and update user preferences
+    while (true) {
+      const nextAction = await navigatePreferences(constrainedPreferences, userPreferences, selectedPreferences);
+      if (nextAction === 'Exit') {
+        break;  // Exit to the main menu
+      }
+    }
+  }
+
+  const finalPreferences = mergeUserAndGeneratedPreferences(userPreferences, constrainedPreferences);
+  const stringifiedFinalPreferences = stringifyPreferences(finalPreferences);
+
+  if (age) {
+    return stringifiedFinalPreferences; // Return the generated preferences if `age` is supplied
+  } else {
+    console.log(convertToTable(finalPreferences));  // Display the user preferences
   }
 };
 export default main;
@@ -323,4 +347,17 @@ const convertToTable = (jsonData: Preferences): string => {
 
   // Return the table as a string
   return table.toString();
+};
+
+const stringifyPreferences = (preferences: Preferences) => {
+  const stringifiedPreferences: { [key: string]: { likes: string, dislikes: string } } = {};
+
+  for (const [category, { likes, dislikes }] of Object.entries(preferences)) {
+    stringifiedPreferences[category] = {
+      likes: likes.join(", "),
+      dislikes: dislikes.join(", "),
+    };
+  }
+
+  return stringifiedPreferences;
 };
