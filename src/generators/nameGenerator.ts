@@ -1,5 +1,5 @@
 import inquirer from 'inquirer';
-import {faker} from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
 // Define type for name gender options
 type NameGender = 'Masculine' | 'Feminine';

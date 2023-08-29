@@ -4,7 +4,7 @@ import generateRandomAge from './generators/ageGenerator';
 import generateRandomName from './generators/nameGenerator';
 import generateRandomAspiration from './generators/aspirationGenerator';
 import generateRandomTraits from './generators/traitsGenerator';
-import generatePreferences from './generators/preferencesGenerator';
+import generateRandomPreferences from './generators/preferencesGenerator';
 
 // Define the type for menu choices
 type MenuChoices =
@@ -57,7 +57,7 @@ async function mainMenu(): Promise<void> {
       await generateRandomTraits();
       break;
     case 'Generate Preferences':
-      await generatePreferences();
+      await generateRandomPreferences();
       break;
     // ... other cases will go here
     case 'Exit':

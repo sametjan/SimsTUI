@@ -27,7 +27,7 @@ export default async function generateRandomAspiration(): Promise<void> {
   ]);
 
   let ageGroupAspirations: any;
-  
+
   switch (ageGroup) {
     case 'Child':
       ageGroupAspirations = aspirationsData['child'];
