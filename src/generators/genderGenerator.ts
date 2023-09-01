@@ -1,68 +1,70 @@
-// Function to randomly select an item from an array
-function randomChoice<T>(options: T[]): T {
-  const index = Math.floor(Math.random() * options.length);
-  return options[index];
+import randomChoice from "../utils/randomChoice";
+
+// Define the types for the gender choices and sexual orientation
+export type SimpleGender = 'Male' | 'Female' | 'Custom';
+type PhysicalDescription = 'Masculine' | 'Feminine';
+type AttractionInterest = 'Men' | 'Women';
+type PregnancyAbility = 'Become pregnant' | 'Get others pregnant' | 'Neither';
+type YesNo = 'Yes' | 'No';
+
+// Define the type for customDetails and sexualOrientation
+export interface CustomDetails {
+  physicalFrame: PhysicalDescription;
+  clothingPreference: PhysicalDescription;
+  pregnancyAbility: PregnancyAbility;
+  milkProduction: YesNo;
+  toiletUsage: YesNo;
 }
 
-// Define types for gender and sexual orientation options
-type Gender = 'Male' | 'Female' | 'Custom';
-type PhysicalFrame = 'Masculine' | 'Feminine';
-type Clothing = 'Masculine' | 'Feminine';
-type PregnancyAbility = 'Become pregnant' | 'Get others pregnant' | 'Neither';
-type MilkProduction = 'Yes' | 'No';
-type ToiletUse = 'Yes' | 'No';
-type RomanticAttraction = 'Men' | 'Women';
-type RomanticExploration = 'Yes' | 'No';
-type WooHooInterest = 'Men' | 'Women';
-type GenderAndOrientation = Record<string, any>;
+export interface SexualOrientation {
+  romanticAttraction: AttractionInterest[];
+  romanticExploration: YesNo;
+  wooHooInterest: AttractionInterest[];
+}
 
-// Function to generate random gender and sexual orientation
-async function generateRandomGenderAndOrientation(): Promise<GenderAndOrientation> {
-  // Randomly generate gender
-  const gender: Gender = randomChoice(['Male', 'Female', 'Custom']);
-  console.log(`Gender: ${gender}`);
+// Choices object for generating options
+const choices = {
+  physicalGender: ['Male', 'Female', 'Custom'] as SimpleGender[],
+  physicalDescription: ['Masculine', 'Feminine'] as PhysicalDescription[],
+  attractionInterest: ['Men', 'Women'] as AttractionInterest[],
+  pregnancyAbility: ['Become pregnant', 'Get others pregnant', 'Neither'] as PregnancyAbility[],
+  yesNo: ['Yes', 'No'] as YesNo[],
+}
 
-  // If gender is Custom, generate additional details
-  let customDetails;
-  if (gender === 'Custom') {
-    const physicalFrame: PhysicalFrame = randomChoice(['Masculine', 'Feminine']);
-    const clothing: Clothing = randomChoice(['Masculine', 'Feminine']);
-    const pregnancyAbility: PregnancyAbility = randomChoice(['Become pregnant', 'Get others pregnant', 'Neither']);
-    const milkProduction: MilkProduction = randomChoice(['Yes', 'No']);
-    const toiletUse: ToiletUse = randomChoice(['Yes', 'No']);
-
-    customDetails = {
-      physicalFrame,
-      clothing,
-      pregnancyAbility,
-      milkProduction,
-      toiletUse,
-    };
-
-    console.log('Custom Details:', customDetails);
+/**
+ * Generate a random gender and sexual orientation for a Sim.
+ */
+async function generateRandomGenderAndOrientation(): Promise<{
+  gender: SimpleGender,
+  customDetails?: CustomDetails,
+  sexualOrientation: SexualOrientation
+}> {
+  console.clear();
+  const simpleGender = randomChoice(choices.physicalGender);
+  const customDetails: CustomDetails = {
+    physicalFrame: randomChoice(choices.physicalDescription),
+    clothingPreference: randomChoice(choices.physicalDescription),
+    pregnancyAbility: randomChoice(choices.pregnancyAbility),
+    milkProduction: randomChoice(choices.yesNo),
+    toiletUsage: randomChoice(choices.yesNo),
+  }
+  const sexualOrientation: SexualOrientation = {
+    romanticAttraction: choices.attractionInterest.filter(() => Math.random() > 0.5),
+    romanticExploration: randomChoice(choices.yesNo),
+    wooHooInterest: choices.attractionInterest.filter(() => Math.random() > 0.5),
   }
 
-  // Randomly generate sexual orientation
-  const romanticAttraction = ['Men', 'Women'].filter(() => Math.random() < 0.5) as RomanticAttraction[];
-  const romanticExploration: RomanticExploration = randomChoice(['Yes', 'No']);
-  const wooHooInterest = ['Men', 'Women'].filter(() => Math.random() < 0.5) as WooHooInterest[];
-
-  console.log('Sexual Orientation:');
-  console.log(`  Romantic Attraction: ${romanticAttraction.join(', ')}`);
-  console.log(`  Romantic Exploration: ${romanticExploration}`);
-  console.log(`  WooHoo Interest: ${wooHooInterest.join(', ')}`);
-
-  // Return gender and orientation details
-  return {
-    gender: gender,
-    customDetails: customDetails || null,
-    orientation: {
-      romanticAttraction: romanticAttraction.join(', '),
-      romanticExploration: romanticExploration,
-      wooHooInterest: wooHooInterest.join(', '),
+  if (simpleGender !== 'Custom') {
+    return {
+      gender: simpleGender,
+      sexualOrientation
     }
-  };
+  } else {
+    return {
+      gender: simpleGender,
+      customDetails,
+      sexualOrientation
+    }
+  }
 }
-
-// Export the function to be used in the main menu
 export default generateRandomGenderAndOrientation;

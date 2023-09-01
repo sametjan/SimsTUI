@@ -1,21 +1,15 @@
-// Define the type for age options
-type Age = 'Infant' | 'Toddler' | 'Child' | 'Teen' | 'Young Adult' | 'Adult' | 'Elder';
+import randomChoice from "../utils/randomChoice";
 
-// Function to randomly select an item from an array
-function randomChoice<T>(options: T[]): T {
-  const index = Math.floor(Math.random() * options.length);
-  return options[index];
-}
+export type Age = 'Infant' | 'Toddler' | 'Child' | 'Teen' | 'Young Adult' | 'Adult' | 'Elder';
+export type AgeRecord = Record<string, Age>;
 
-// Function to generate random age
-export default function generateRandomAge(): Age {
-  // List of available age options
+/**
+ * Generate a random age for a Sim.
+ */
+async function generateRandomAge(): Promise<AgeRecord> {
+  console.clear();
   const ageOptions: Age[] = ['Infant', 'Toddler', 'Child', 'Teen', 'Young Adult', 'Adult', 'Elder'];
-
-  // Randomly select an age
-  const selectedAge: Age = randomChoice(ageOptions);
-
-  // Output the selected age
-  console.log(`Age: ${selectedAge}`);
-  return selectedAge;
+  const selectedAge = randomChoice(ageOptions) as Age;
+  return { "age": selectedAge } as AgeRecord;
 }
+export default generateRandomAge;

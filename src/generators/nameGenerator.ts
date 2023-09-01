@@ -1,33 +1,38 @@
-import inquirer from 'inquirer';
+import chalk from 'chalk';
+import { select, Separator } from '@inquirer/prompts';
 import { faker } from '@faker-js/faker';
+import { log } from 'console';
 
-// Define type for name gender options
-type NameGender = 'Masculine' | 'Feminine';
+import {
+  SimpleGender as Gender,
+  CustomDetails
+} from './genderGenerator';
 
-// Function to generate random name
-export default async function generateRandomName(gender?: string): Promise<{firstName: string, lastName: string}> {
-  let genderForm: string;
+const NameGenders = ['Masculine', 'Feminine'] as const;
+type NameGender = typeof NameGenders[number];
 
-  if (gender === 'Custom' || null) {
-    // Ask user for name gender preference if in standalone mode
-    const response = await inquirer.prompt([
-      {
-        type: 'list',
-        name: 'nameGender',
-        message: 'Would you like a masculine or feminine name?',
-        choices: ['Masculine', 'Feminine'],
-      },
-    ]);
-    genderForm = response.nameGender;
+async function generateRandomName(
+  gender?: Gender | undefined,
+  hint?: Pick<CustomDetails, 'physicalFrame' | 'clothingPreference'>
+) {
+  let genderForm: NameGender;
+  const message = [
+    chalk.greenBright('Would you like a masculine or feminine name?'),
+    chalk.magenta(`Physical Frame: ${hint?.physicalFrame}, Clothing Preference: ${hint?.clothingPreference}`)
+  ];
+  if (gender === 'Custom' || gender === undefined) {
+    genderForm = await select({
+      message: hint ? message.join('\n') : message[0],
+      choices: NameGenders.map(x => ({ name: x, value: x })),
+    }) as NameGender;
   } else {
-    genderForm = gender === 'Male' ? 'Masculine' : 'Feminine';
+    genderForm = gender === 'Male' ? NameGenders[0] : NameGenders[1];
   }
 
-  // Generate a random first and last name based on gender preference
-  const firstName = faker.person.firstName(genderForm === 'Masculine' ? 'male' : 'female');
-  const lastName = faker.person.lastName();
+  console.log(genderForm, NameGenders[0], genderForm === NameGenders[0]);
 
-  // Output the generated name
-  console.log(`Name: ${firstName} ${lastName}`);
+  const firstName = faker.person.firstName(genderForm === NameGenders[0] ? 'male' : 'female');
+  const lastName = faker.person.lastName();
   return { firstName, lastName };
 }
+export default generateRandomName;
