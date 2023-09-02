@@ -3,7 +3,7 @@ import chalk from 'chalk';
 
 // Import the generators
 import genderGenerator from './generators/genderGenerator';
-import ageGenerator, {AgeRecord} from './generators/ageGenerator';
+import ageGenerator, { AgeRecord } from './generators/ageGenerator';
 import nameGenerator from './generators/nameGenerator';
 
 /**
@@ -11,7 +11,7 @@ import nameGenerator from './generators/nameGenerator';
  * Should have a variety of options for generating portions of a Sim, a whole
  * Sim, setting preferences, or exiting the program.
  */
-async function mainMenu(init?: Boolean): Promise<void> {
+async function mainMenu(init?: boolean): Promise<void> {
   if (init) console.clear(); // Clear the console
   const answer = await select({
     message: chalk.greenBright.bold('What would you like to do?'),
@@ -36,19 +36,19 @@ async function mainMenu(init?: Boolean): Promise<void> {
         name: 'Generate Aspiration',
         value: 'aspiration',
         description: chalk.yellow('Generate a random aspiration for a Sim'),
-        disabled: chalk.redBright('Not yet implemented')
+        disabled: chalk.redBright('Not yet implemented'),
       },
       {
         name: 'Generate Traits',
         value: 'traits',
         description: chalk.yellow('Generate random traits for a Sim'),
-        disabled: chalk.redBright('Not yet implemented')
+        disabled: chalk.redBright('Not yet implemented'),
       },
       {
         name: 'Generate Preferences',
         value: 'preferences',
         description: chalk.yellow('Generate random preferences for a Sim'),
-        disabled: chalk.redBright('Not yet implemented')
+        disabled: chalk.redBright('Not yet implemented'),
       },
       new Separator(),
       {
@@ -60,17 +60,20 @@ async function mainMenu(init?: Boolean): Promise<void> {
       {
         name: 'Settings',
         value: 'settings',
-        description: chalk.yellow(['Change the settings for the generator ',
-        'including what packs you have installed, mods, or custom data']
-        .join('')), // join the array into a string
-        disabled: chalk.redBright('Not yet implemented')
+        description: chalk.yellow(
+          [
+            'Change the settings for the generator ',
+            'including what packs you have installed, mods, or custom data',
+          ].join(''),
+        ), // join the array into a string
+        disabled: chalk.redBright('Not yet implemented'),
       },
       {
         name: 'Quit',
         value: 'exit',
         description: chalk.yellow('Exit the program'),
-      }
-    ]
+      },
+    ],
   });
 
   // Handle the user's selection
@@ -101,8 +104,7 @@ async function mainMenu(init?: Boolean): Promise<void> {
     }
     case 'exit': {
       console.log('Exiting. Goodbye!');
-      if (process.env.NODE_ENV === 'development')
-        process.kill(process.pid, 'SIGTERM');
+      if (process.env.NODE_ENV === 'development') process.kill(process.pid, 'SIGTERM');
       process.exit(0);
       break;
     }

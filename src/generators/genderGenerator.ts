@@ -1,4 +1,4 @@
-import randomChoice from "../utils/randomChoice";
+import randomChoice from '../utils/randomChoice';
 
 // Define the types for the gender choices and sexual orientation
 export type SimpleGender = 'Male' | 'Female' | 'Custom';
@@ -29,15 +29,15 @@ const choices = {
   attractionInterest: ['Men', 'Women'] as AttractionInterest[],
   pregnancyAbility: ['Become pregnant', 'Get others pregnant', 'Neither'] as PregnancyAbility[],
   yesNo: ['Yes', 'No'] as YesNo[],
-}
+};
 
 /**
  * Generate a random gender and sexual orientation for a Sim.
  */
 async function generateRandomGenderAndOrientation(): Promise<{
-  gender: SimpleGender,
-  customDetails?: CustomDetails,
-  sexualOrientation: SexualOrientation
+  gender: SimpleGender;
+  customDetails?: CustomDetails;
+  sexualOrientation: SexualOrientation;
 }> {
   console.clear();
   const simpleGender = randomChoice(choices.physicalGender);
@@ -47,24 +47,24 @@ async function generateRandomGenderAndOrientation(): Promise<{
     pregnancyAbility: randomChoice(choices.pregnancyAbility),
     milkProduction: randomChoice(choices.yesNo),
     toiletUsage: randomChoice(choices.yesNo),
-  }
+  };
   const sexualOrientation: SexualOrientation = {
     romanticAttraction: choices.attractionInterest.filter(() => Math.random() > 0.5),
     romanticExploration: randomChoice(choices.yesNo),
     wooHooInterest: choices.attractionInterest.filter(() => Math.random() > 0.5),
-  }
+  };
 
   if (simpleGender !== 'Custom') {
     return {
       gender: simpleGender,
-      sexualOrientation
-    }
+      sexualOrientation,
+    };
   } else {
     return {
       gender: simpleGender,
       customDetails,
-      sexualOrientation
-    }
+      sexualOrientation,
+    };
   }
 }
 export default generateRandomGenderAndOrientation;

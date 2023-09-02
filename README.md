@@ -1,4 +1,3 @@
-
 # SimsTUI - A Text-Based User Interface for Sims Character Generation
 
 ## Overview
@@ -43,4 +42,3 @@ Feel free to open issues and pull requests. Your contributions are welcome!
 ## License
 
 This project is licensed under the MIT License.
-
