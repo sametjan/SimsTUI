@@ -6,6 +6,7 @@ import genderGenerator from './generators/genderGenerator';
 import ageGenerator, { AgeRecord } from './generators/ageGenerator';
 import nameGenerator from './generators/nameGenerator';
 import { UserCancelledError } from './errors';
+import generateChoice from './utils/generateChoice';
 
 /**
  * Define function for the main menu.
@@ -18,43 +19,15 @@ async function mainMenu(init?: boolean): Promise<void> {
     message: chalk.greenBright.bold('What would you like to do?'),
     pageSize: 20,
     choices: [
-      {
-        name: 'Generate Gender/Sexual Orientation',
-        value: 'gender',
-        description: chalk.yellow('Generate a random gender and sexual orientation for a Sim'),
-      },
-      {
-        name: 'Generate Age',
-        value: 'age',
-        description: chalk.yellow('Generate a random age for a Sim'),
-      },
-      {
-        name: 'Generate Name',
-        value: 'name',
-        description: chalk.yellow('Generate a random name for a Sim'),
-      },
-      {
-        name: 'Generate Aspiration',
-        value: 'aspiration',
-        description: chalk.yellow('Generate a random aspiration for a Sim'),
-        disabled: chalk.redBright('Not yet implemented'),
-      },
-      {
-        name: 'Generate Traits',
-        value: 'traits',
-        description: chalk.yellow('Generate random traits for a Sim'),
-        disabled: chalk.redBright('Not yet implemented'),
-      },
-      {
-        name: 'Generate Preferences',
-        value: 'preferences',
-        description: chalk.yellow('Generate random preferences for a Sim'),
-        disabled: chalk.redBright('Not yet implemented'),
-      },
+      generateChoice('Generate Gender/Sexual Orientation', 'gender', 'a random gender and sexual orientation'),
+      generateChoice('Generate Age', 'age', 'a random age'),
+      generateChoice('Generate Name', 'name', 'a random name'),
+      generateChoice('Generate Aspiration', 'aspiration', 'a random aspiration', 'Not yet implemented'),
+      generateChoice('Generate Traits', 'traits', 'random traits', 'Not yet implemented'),
+      generateChoice('Generate Preferences', 'preferences', 'random preferences', 'Not yet implemented'),
       new Separator(),
       {
-        name: 'Create Whole Sim',
-        value: 'wholeSim',
+        ...generateChoice('Create Whole Sim', 'wholeSim'),
         description: chalk.yellow('Generate a whole Sim'),
       },
       new Separator(),
@@ -66,7 +39,7 @@ async function mainMenu(init?: boolean): Promise<void> {
             'Change the settings for the generator ',
             'including what packs you have installed, mods, or custom data',
           ].join(''),
-        ), // join the array into a string
+        ),
         disabled: chalk.redBright('Not yet implemented'),
       },
       {
@@ -95,16 +68,22 @@ async function mainMenu(init?: boolean): Promise<void> {
         console.log(name);
       } catch (e) {
         if (e instanceof UserCancelledError !== true) console.error(e);
+        else console.clear();
       }
       break;
     }
     case 'wholeSim': {
-      const gender = await genderGenerator();
-      const age = await ageGenerator();
-      const name = await nameGenerator(gender.gender, gender.customDetails || undefined);
+      try {
+        const gender = await genderGenerator();
+        const age = await ageGenerator();
+        const name = await nameGenerator(gender.gender, gender.customDetails || undefined);
 
-      const sim = Object.assign({}, name, age, gender);
-      console.log(sim);
+        const sim = Object.assign({}, name, age, gender);
+        console.log(sim);
+      } catch (e) {
+        if (e instanceof UserCancelledError !== true) console.error(e);
+        else console.clear();
+      }
       break;
     }
     case 'exit': {

@@ -1,9 +1,11 @@
+import * as process from 'process';
 import chalk from 'chalk';
 import { select, Separator } from '@inquirer/prompts';
 import { faker } from '@faker-js/faker';
 
 import { SimpleGender as Gender, CustomDetails } from './genderGenerator';
 import { UserCancelledError } from '../errors';
+import generateChoice from '../utils/generateChoice';
 
 const NameGenders = ['Masculine', 'Feminine'] as const;
 type NameGenderBase = (typeof NameGenders)[number];
@@ -21,17 +23,13 @@ async function generateRandomName(
   if (['Custom', undefined].includes(gender)) {
     genderForm = (await select({
       message: hint ? message.join('\n') : message[0],
-      choices: [
-        ...NameGenders.map((x) => ({ name: x, value: x })),
-        new Separator(),
-        { name: 'Go Back', value: 'cancel' },
-      ],
+      choices: [...NameGenders.map((x) => generateChoice(x, x)), new Separator(), generateChoice('Go Back', 'cancel')],
     })) as NameGender;
   } else {
     genderForm = gender === 'Male' ? NameGenders[0] : NameGenders[1];
   }
 
-  if (genderForm === 'cancel') {
+  if (['cancel', null].includes(genderForm)) {
     throw new UserCancelledError();
   }
 
