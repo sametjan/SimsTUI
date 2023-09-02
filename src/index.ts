@@ -5,6 +5,7 @@ import chalk from 'chalk';
 import genderGenerator from './generators/genderGenerator';
 import ageGenerator, { AgeRecord } from './generators/ageGenerator';
 import nameGenerator from './generators/nameGenerator';
+import { UserCancelledError } from './errors';
 
 /**
  * Define function for the main menu.
@@ -89,8 +90,12 @@ async function mainMenu(init?: boolean): Promise<void> {
       break;
     }
     case 'name': {
-      const name = await nameGenerator();
-      console.log(name);
+      try {
+        const name = await nameGenerator();
+        console.log(name);
+      } catch (e) {
+        if (e instanceof UserCancelledError !== true) console.error(e);
+      }
       break;
     }
     case 'wholeSim': {

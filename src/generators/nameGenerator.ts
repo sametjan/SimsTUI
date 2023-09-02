@@ -3,6 +3,7 @@ import { select, Separator } from '@inquirer/prompts';
 import { faker } from '@faker-js/faker';
 
 import { SimpleGender as Gender, CustomDetails } from './genderGenerator';
+import { UserCancelledError } from '../errors';
 
 const NameGenders = ['Masculine', 'Feminine'] as const;
 type NameGenderBase = (typeof NameGenders)[number];
@@ -17,21 +18,21 @@ async function generateRandomName(
     chalk.greenBright('Would you like a masculine or feminine name?'),
     chalk.magenta(`Physical Frame: ${hint?.physicalFrame}, Clothing Preference: ${hint?.clothingPreference}`),
   ];
-  if (gender === 'Custom' || gender === undefined) {
+  if (['Custom', undefined].includes(gender)) {
     genderForm = (await select({
       message: hint ? message.join('\n') : message[0],
       choices: [
         ...NameGenders.map((x) => ({ name: x, value: x })),
         new Separator(),
-        { name: 'Go Back', value: 'cancel' }
-      ]
+        { name: 'Go Back', value: 'cancel' },
+      ],
     })) as NameGender;
   } else {
     genderForm = gender === 'Male' ? NameGenders[0] : NameGenders[1];
   }
 
   if (genderForm === 'cancel') {
-    Promise.reject('User cancelled');
+    throw new UserCancelledError();
   }
 
   const firstName = faker.person.firstName(genderForm === NameGenders[0] ? 'male' : 'female');
