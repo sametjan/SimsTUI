@@ -4,421 +4,491 @@
       "name": "Artisitic Prodigy",
       "value": "artisticProdigy",
       "category": "Creative",
-      "ageGroups": ["Child"]
+      "ageGroups": ["Child"],
+      "pack": "baseGame"
     },
     {
       "name": "Whiz Kid",
       "value": "whizKid",
       "category": "Mental",
-      "ageGroups": ["Child"]
+      "ageGroups": ["Child"],
+      "pack": "baseGame"
     },
     {
       "name": "Rambunctious Scamp",
       "value": "rambunctiousScamp",
       "category": "Motor",
-      "ageGroups": ["Child"]
+      "ageGroups": ["Child"],
+      "pack": "baseGame"
     },
     {
       "name": "Social Butterfly",
       "value": "socialButterfly",
       "category": "Social",
-      "ageGroups": ["Child"]
+      "ageGroups": ["Child"],
+      "pack": "baseGame"
     },
     {
       "name": "Playtime Captain",
       "value": "playtimeCaptain",
       "category": "Multi-skill",
-      "ageGroups": ["Child"]
+      "ageGroups": ["Child"],
+      "pack": "EP13"
     },
     {
       "name": "Creative Genius",
       "value": "creativeGenius",
       "category": "Multi-skill",
-      "ageGroups": ["Child"]
+      "ageGroups": ["Child"],
+      "pack": "EP13"
     },
     {
       "name": "Slumber Party Animal",
       "value": "slumberPartyAnimal",
       "category": "Multi-skill",
-      "ageGroups": ["Child"]
+      "ageGroups": ["Child"],
+      "pack": "EP13"
     },
     {
       "name": "Mind and Body",
       "value": "mindAndBody",
       "category": "Multi-skill",
-      "ageGroups": ["Child"]
+      "ageGroups": ["Child"],
+      "pack": "EP13"
     },
     {
       "name": "Live Fast",
       "value": "liveFast",
       "category": "Teen",
-      "ageGroups": ["Teen"]
+      "ageGroups": ["Teen"],
+      "pack": "EP12"
     },
     {
       "name": "Admired Icon",
       "value": "admiredIcon",
       "category": "Teen",
-      "ageGroups": ["Teen"]
+      "ageGroups": ["Teen"],
+      "pack": "EP12"
     },
     {
       "name": "Drama Llama",
       "value": "dramaLlama",
       "category": "Teen",
-      "ageGroups": ["Teen"]
+      "ageGroups": ["Teen"],
+      "pack": "EP12"
     },
     {
       "name": "Goal Oriented",
       "value": "goalOriented",
       "category": "Teen",
-      "ageGroups": ["Teen"]
+      "ageGroups": ["Teen"],
+      "pack": "EP12"
     },
     {
       "name": "Friend of the Animals",
       "value": "friendOfTheAnimals",
       "category": "Animal",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP04"
     },
     {
       "name": "Extreme Sports Enthusiast",
       "value": "extremeSportsEnthusiast",
       "category": "Athletic",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP10"
     },
     {
       "name": "Body Builder",
       "value": "bodybuilder",
       "category": "Athletic",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Championship Rider",
       "value": "championshipRider",
       "category": "Athletic",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP14"
     },
     {
       "name": "Mastor Actor",
       "value": "mastorActor",
       "category": "Creativity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP06"
     },
     {
       "name": "Painter Extraordinaire",
       "value": "painterExtraordinaire",
       "category": "Creativity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Bestselling Author",
       "value": "bestsellingAuthor",
       "category": "Creativity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Musical Genius",
       "value": "musicalGenius",
       "category": "Creativity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
-      "name": "Lord of the Knits",
+      "name": "Lord/Lady of the Knits",
       "value": "lordOfTheKnits",
       "category": "Creativity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "SP17"
     },
     {
       "name": "Master Maker",
       "value": "masterMaker",
       "category": "Creativity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP09"
     },
     {
       "name": "Public Enemy",
       "value": "publicEnemy",
       "category": "Deviance",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Chief of Mischief",
       "value": "chiefOfMischief",
       "category": "Deviance",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Villainous Valentine",
       "value": "villainousValentine",
       "category": "Deviance",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Super Parent",
       "value": "superParent",
       "category": "Family",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP05"
     },
     {
       "name": "Successful Lineage",
       "value": "successfulLineage",
       "category": "Family",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Big Happy Family",
       "value": "bigHappyFamily",
       "category": "Family",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Vampire Family",
       "value": "vampireFamily",
       "category": "Family",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP04"
     },
     {
       "name": "Master Chef",
       "value": "masterChef",
       "category": "Food",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Master Mixologist",
       "value": "masterMixologist",
       "category": "Food",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Expert Wine Maker",
       "value": "expertWineMaker",
       "category": "Food",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP14"
     },
     {
       "name": "Fabulously Wealthy",
       "value": "fabulouslyWealthy",
       "category": "Fortune",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Mansion Baron",
       "value": "mansionBaron",
       "category": "Fortune",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Master Vampire",
       "value": "masterVampire",
       "category": "Knowledge",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP04"
     },
     {
       "name": "Renaissance Sim",
       "value": "renaissanceSim",
       "category": "Knowledge",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Archaeology Scholar",
       "value": "archaeologyScholar",
       "category": "Knowledge",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP06"
     },
     {
       "name": "Computer Whiz",
       "value": "computerWhiz",
       "category": "Knowledge",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Nerd Brain",
       "value": "nerdBrain",
       "category": "Knowledge",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Spellcraft And Sorcery",
       "value": "spellcraftAndSorcery",
       "category": "Knowledge",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP08"
     },
     {
       "name": "Academic",
       "value": "academic",
       "category": "Knowledge",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP08"
     },
     {
       "name": "Strangerville Mystery",
       "value": "strangervilleMystery",
       "category": "Location",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP07"
     },
     {
       "name": "Mt. Komorebi Sightseer",
       "value": "mtKomorebiSightseer",
       "category": "Location",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP10"
     },
     {
       "name": "Fabulously Filthy",
       "value": "fabulouslyFilthy",
       "category": "Location",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "SP22"
     },
     {
       "name": "Perfectly Prisitine",
       "value": "perfectlyPrisitine",
       "category": "Location",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "SP22"
     },
     {
       "name": "City Native",
       "value": "cityNative",
       "category": "Location",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP03"
     },
     {
       "name": "Beach Life",
       "value": "beachLife",
       "category": "Location",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP07"
     },
     {
       "name": "Serial Romantic",
       "value": "serialRomantic",
       "category": "Love",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Soulmate",
       "value": "soulmate",
       "category": "Love",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Country Caretaker",
       "value": "countryCaretaker",
       "category": "Nature",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP11"
     },
     {
       "name": "Outdoor Enthusiast",
       "value": "outdoorEnthusiast",
       "category": "Nature",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP01"
     },
     {
       "name": "Purveyor Of Potions",
       "value": "purveyorOfPotions",
       "category": "Nature",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP08"
     },
     {
       "name": "Freelance Botanist",
       "value": "freelanceBotanist",
       "category": "Nature",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Angling Ace",
       "value": "anglingAce",
       "category": "Nature",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "The Curator",
       "value": "theCurator",
       "category": "Nature",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Jungle Explorer",
       "value": "jungleExplorer",
       "category": "Nature",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP06"
     },
     {
       "name": "Eco Innovator",
       "value": "ecoInnovator",
       "category": "Nature",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP09"
     },
     {
       "name": "Neighborhood Confidante",
       "value": "neighborhoodConfidante",
       "category": "Popularity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "World Famous Celebrity",
       "value": "worldFamousCelebrity",
       "category": "Popularity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP06"
     },
     {
       "name": "Leader Of The Pack",
       "value": "leaderOfThePack",
       "category": "Popularity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "EP02"
     },
     {
       "name": "Joke Star",
       "value": "jokeStar",
       "category": "Popularity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Friend Of The World",
       "value": "friendOfTheWorld",
       "category": "Popularity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Party Animal",
       "value": "partyAnimal",
       "category": "Popularity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "baseGame"
     },
     {
       "name": "Good Vampire",
       "value": "goodVampire",
       "category": "Popularity",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP04"
     },
     {
       "name": "Hope Vs Order",
       "value": "hopeVsOrder",
       "category": "Star Wars",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP09"
     },
     {
       "name": "Galactic Privateer",
       "value": "galacticPrivateer",
       "category": "Star Wars",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP09"
     },
     {
       "name": "Inner Peace",
       "value": "innerPeace",
       "category": "Wellness",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP02"
     },
     {
       "name": "Zen Guru",
       "value": "zenGuru",
       "category": "Wellness",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP02"
     },
     {
       "name": "Self Care Specialist",
       "value": "selfCareSpecialist",
       "category": "Wellness",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP02"
     },
     {
       "name": "Werewolf Initiate",
       "value": "wereWolfInitiate",
       "category": "Werewolf",
-      "ageGroups": ["Teen", "Adult"]
+      "ageGroups": ["Teen", "Adult"],
+      "pack": "GP12"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import randomChoice from '../utils/randomChoice';
 
-export type Age = 'Infant' | 'Toddler' | 'Child' | 'Teen' | 'Young Adult' | 'Adult' | 'Elder';
+export const AgeGroups = ['Infant', 'Toddler', 'Child', 'Teen', 'Young Adult', 'Adult', 'Elder'] as const;
+export type Age = (typeof AgeGroups)[number];
 export type AgeRecord = Record<string, Age>;
 
 /**
@@ -8,8 +9,7 @@ export type AgeRecord = Record<string, Age>;
  */
 async function generateRandomAge(): Promise<AgeRecord> {
   console.clear();
-  const ageOptions: Age[] = ['Infant', 'Toddler', 'Child', 'Teen', 'Young Adult', 'Adult', 'Elder'];
-  const selectedAge = randomChoice(ageOptions) as Age;
+  const selectedAge = randomChoice([...AgeGroups]) as Age;
   return { age: selectedAge } as AgeRecord;
 }
 export default generateRandomAge;

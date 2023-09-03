@@ -5,6 +5,9 @@ import chalk from 'chalk';
 import genderGenerator from './generators/genderGenerator';
 import ageGenerator, { AgeRecord } from './generators/ageGenerator';
 import nameGenerator from './generators/nameGenerator';
+import aspirationGenerator from './generators/aspirationGenerator';
+
+// Import Erros and utils
 import { UserCancelledError } from './errors';
 import generateChoice from './utils/generateChoice';
 
@@ -22,7 +25,7 @@ async function mainMenu(init?: boolean): Promise<void> {
       generateChoice('Generate Gender/Sexual Orientation', 'gender', 'a random gender and sexual orientation'),
       generateChoice('Generate Age', 'age', 'a random age'),
       generateChoice('Generate Name', 'name', 'a random name'),
-      generateChoice('Generate Aspiration', 'aspiration', 'a random aspiration', 'Not yet implemented'),
+      generateChoice('Generate Aspiration', 'aspiration', 'a random aspiration'),
       generateChoice('Generate Traits', 'traits', 'random traits', 'Not yet implemented'),
       generateChoice('Generate Preferences', 'preferences', 'random preferences', 'Not yet implemented'),
       new Separator(),
@@ -72,16 +75,28 @@ async function mainMenu(init?: boolean): Promise<void> {
       }
       break;
     }
+    case 'aspiration': {
+      try {
+        const { aspiration } = (await aspirationGenerator()) as { aspiration: { category: string; name: string } };
+        console.log(chalk.blue(`${aspiration?.category} > ${aspiration?.name}`));
+      } catch (e) {
+        if (e instanceof UserCancelledError !== true) console.error(e);
+        else console.clear();
+      }
+      break;
+    }
     case 'wholeSim': {
       try {
         const gender = await genderGenerator();
         const age = await ageGenerator();
         const name = await nameGenerator(gender.gender, gender.customDetails || undefined);
+        const aspiration = await aspirationGenerator(age.age);
 
-        const sim = Object.assign({}, name, age, gender);
+        const sim = Object.assign({}, name, age, gender, aspiration);
         console.log(sim);
       } catch (e) {
-        if (e instanceof UserCancelledError !== true) console.error(e);
+        // if (e instanceof UserCancelledError !== true) console.error(e);
+        if ([UserCancelledError].some((x) => e instanceof x) !== true) console.error(e);
         else console.clear();
       }
       break;
