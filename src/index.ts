@@ -7,7 +7,9 @@ import ageGenerator, { AgeRecord } from './generators/ageGenerator';
 import nameGenerator from './generators/nameGenerator';
 import aspirationGenerator from './generators/aspirationGenerator';
 
-// Import Erros and utils
+import settingsMenu from './settings';
+
+// Import Errors and utils
 import { UserCancelledError } from './errors';
 import generateChoice from './utils/generateChoice';
 
@@ -43,7 +45,6 @@ async function mainMenu(init?: boolean): Promise<void> {
             'including what packs you have installed, mods, or custom data',
           ].join(''),
         ),
-        disabled: chalk.redBright('Not yet implemented'),
       },
       {
         name: 'Quit',
@@ -97,6 +98,15 @@ async function mainMenu(init?: boolean): Promise<void> {
       } catch (e) {
         // if (e instanceof UserCancelledError !== true) console.error(e);
         if ([UserCancelledError].some((x) => e instanceof x) !== true) console.error(e);
+        else console.clear();
+      }
+      break;
+    }
+    case 'settings': {
+      try {
+        await settingsMenu();
+      } catch (e) {
+        if (e instanceof UserCancelledError !== true) console.error(e);
         else console.clear();
       }
       break;

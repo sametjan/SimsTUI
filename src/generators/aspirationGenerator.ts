@@ -6,6 +6,7 @@ import * as path from 'path';
 import { UserCancelledError } from '../errors';
 import randomChoice from '../utils/randomChoice';
 import generateChoice from '../utils/generateChoice';
+import { readSettings, Settings } from '../settings';
 
 import { AgeGroups, Age } from './ageGenerator';
 const AspriationAgeGroups = ['Child', 'Teen', 'Adult'] as const;
@@ -22,6 +23,8 @@ type AspirationData = {
 };
 
 async function generateRandomAspirations(age?: string) {
+  const settings: Settings = readSettings();
+  const packs = settings?.packs;
   const { aspirations } = JSON.parse(
     fs.readFileSync(path.join(__dirname, '../data/aspirations.json'), 'utf-8'),
   ) as AspirationData;
