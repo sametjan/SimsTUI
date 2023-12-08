@@ -12,7 +12,8 @@
 				"GitHub.copilot-chat",
 				"GitHub.copilot",
 				"EditorConfig.EditorConfig",
-				"streetsidesoftware.code-spell-checker"
+				"streetsidesoftware.code-spell-checker",
+				"GitHub.vscode-pull-request-github"
 			]
 		}
 	}
