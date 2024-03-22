@@ -46,6 +46,7 @@
       "Adventurous",
       "Child of the Islands",
       "Child of the Ocean",
+      "Child of the Village",
       "Glutton",
       "Green Fiend",
       "Kleptomaniac",
@@ -92,16 +93,26 @@
     ],
     "social": [
       "Bro",
+      "Cringe",
+      "Generous",
       "Hates Children",
       "Jealous",
       "Loyal",
+      "Nosy",
+      "Party-Animal",
       "Self-Absorbed",
       "Snob",
       "Socially Awkward"
     ]
   },
   "adult": {
-    "emotional": [],
+    "emotional": ["Ambitious"],
+    "hobby": [],
+    "lifestyle": [],
+    "social": ["Family-Oriented", "Noncommittal"]
+  },
+  "elder": {
+    "emotional": ["Wise"],
     "hobby": [],
     "lifestyle": [],
     "social": []

@@ -1,10 +1,50 @@
 {
     "child": {
-        "color": ["Black", "Blue", "Brown", "Gray", "Green", "Orange", "Pink", "Purple", "Red", "White", "Yellow"],
-        "music_genre": ["Alternative", "Americana", "Backyard", "Baroque", "Batuu", "Blues", "Carnival Beats", "Classical", "Cottagecore", "DJ Booth", "Easy Listening", "Electronica", "Focus", "Hip Hop", "Island", "Japanese Folk", "Jazz", "Kids Radio", "Latin", "Latin Pop", "Lullabies Radio", "Metal", "New Age", "NuDisco", "Pop", "R&B", "Ranch", "Retro", "Romance", "S-Pop", "Singer Songwriter", "Soul", "Spooky", "Strage", "Summer Strut", "Tween Pop", "Winter Holiday", "World"],
-        "sim_characteristics": ["Ambitionless", "Argumentative", "Cerebral", "Egotistical", "Emotional Decision-Makers", "Family-Motivated", "Funny", "Hard-Working", "High Energy", "Homebody", "Idealist", "Nature Enthusiats", "Optimistic", "Pessimistic", "Pet Enthusiats", "Rascals", "Spirited"],
-        "conversation_topics": ["Affection", "Arguments", "Complaints", "Compliments", "Deception", "Deep Thoughts", "Discussing Hobbies", "Discussing Interests", "Gossip", "Jokes", "Malicious Interactions", "Potty Humor", "Pranks", "Silly Behavior", "Small Talk", "Stories"],
-        "hobbies_and_skills": ["Bowling", "Comedy", "Cross-stitch", "Dancing", "Fishing", "Fitness", "Horse Riding", "Knitting", "Mischief", "Photography", "Piano", "Pipe Organ", "Singing", "Skiing", "Snowboarding", "Video Gaming", "Violin", "Wellness"]
+        "color": [
+            "Black", "Blue", "Brown", 
+            "Gray", "Green", "Orange", 
+            "Pink", "Purple", "Red", 
+            "White", "Yellow"
+        ],
+        "music_genre": [
+            "Alternative", "Americana", "Backyard", 
+            "Baroque", "Batuu", "Blues", 
+            "Carnival Beats", "Classical", "Cottagecore", 
+            "DJ Booth", "Easy Listening", "Electronica", 
+            "Focus", "Hip Hop", "Island", 
+            "Japanese Folk", "Jazz", "Kids Radio", 
+            "Latin", "Latin Pop", "Lullabies Radio", 
+            "Metal", "New Age", "NuDisco", 
+            "Pop", "R&B", "Ranch", 
+            "Retro", "Romance", "S-Pop", 
+            "Singer Songwriter", "Soul", "Spooky", 
+            "Strage", "Summer Strut", "Tween Pop", 
+            "Winter Holiday", "World"
+        ],
+        "sim_characteristics": [
+            "Ambitionless", "Argumentative", "Cerebral", 
+            "Egotistical", "Emotional Decision-Makers", "Family-Motivated", 
+            "Funny", "Hard-Working", "High Energy", 
+            "Homebody", "Idealist", "Nature Enthusiats", 
+            "Optimistic", "Pessimistic", "Pet Enthusiats", 
+            "Rascals", "Spirited"
+        ],
+        "conversation_topics": [
+            "Affection", "Arguments", "Complaints", 
+            "Compliments", "Deception", "Deep Thoughts", 
+            "Discussing Hobbies", "Discussing Interests", "Gossip", 
+            "Jokes", "Malicious Interactions", "Potty Humor", 
+            "Pranks", "Silly Behavior", "Small Talk", 
+            "Stories"
+        ],
+        "hobbies_and_skills": [
+            "Bowling", "Comedy", "Cross-stitch", 
+            "Dancing", "Fishing", "Fitness", 
+            "Horse Riding", "Knitting", "Mischief", 
+            "Photography", "Piano", "Pipe Organ", 
+            "Singing", "Skiing", "Snowboarding", 
+            "Video Gaming", "Violin", "Wellness"
+        ]
     },
     "teen": {
         "color": [],
@@ -12,7 +52,7 @@
         "sim_characteristics": ["Romance Enthusiasts"],
         "conversation_topics": ["Flirtation", "Phsyical Intimacy"],
         "fashion": ["Basics", "Boho", "Country", "Hipster", "Outdoorsy", "Polished", "Preppy", "Rocker", "Streetwear"],
-        "hobbies_and_skills": ["Acting", "Baking", "Cooking", "DJ Mixing", "Gardening", "Guitar", "Handiness", "Media Production", "Mixology", "Painting", "Programming", "Research & Debate", "Robotics", "Rock Climbing", "Rocket Science", "Wine Making", "Writing"],
+        "hobbies_and_skills": ["Acting", "Baking", "Cooking", "DJ Mixing", "Gardening", "Gemology", "Guitar", "Handiness", "Media Production", "Mixology", "Nector Making", "Painting", "Programming", "Research & Debate", "Robotics", "Rock Climbing", "Rocket Science", "Writing"],
         "decor": ["Art Deco", "Basics", "Boho", "Contemporary", "Cosmolux", "Cute", "Farmhouse", "French Country", "Garden", "Industrial", "Island", "Luxe", "Mid Century", "Mission", "Modern", "Patio", "Queen Anne", "Shabby", "Storybook", "Suburban Contemporary", "Vintage"]
     },
     "adult": {

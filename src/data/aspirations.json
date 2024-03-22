@@ -29,7 +29,8 @@
     "deviance": [
       "publicEnemy",
       "chiefOfMischief",
-      "villainousValentine"
+      "villainousValentine",
+      "seekerOfSecrets"
     ],
     "family": [
       "superParent",
@@ -40,11 +41,14 @@
     "food": [
       "masterChef",
       "masterMixologist",
-      "expertWineMaker"
+      "expertNectarMaker",
+      "applianceWiz"
     ],
     "fortune": [
       "fabulouslyWealthy",
-      "mansionBaron"
+      "mansionBaron",
+      "fiveStarPropertyOwner",
+      "marketMagnate"
     ],
     "knowledge": [
       "masterVampire",
@@ -61,7 +65,8 @@
       "fabulouslyFilthy",
       "perfectlyPrisitine",
       "cityNative",
-      "beachLife"
+      "beachLife",
+      "fountOfTomaraniKnowledge"
     ],
     "love": [
       "serialRomantic",
@@ -75,7 +80,8 @@
       "anglingAce",
       "theCurator",
       "jungleExplorer",
-      "ecoInnovator"
+      "ecoInnovator",
+      "crystalCrafter"
     ],
     "popularity": [
       "neighborhoodConfidante",
@@ -84,7 +90,8 @@
       "jokeStar",
       "friendOfTheWorld",
       "partyAnimal",
-      "goodVampire"
+      "goodVampire",
+      "discerningDweller"
     ],
     "starWars": [
       "hopeVsOrder",
